@@ -4,7 +4,7 @@
   remote_user: ubuntu
   gather_facts: no
   vars:
-    file_path: "/var/lib/awx/projects/_16__docker" 
+    file_path: "/var/lib/awx/projects/_19__docker" 
 
   tasks:
     - name : build docker
