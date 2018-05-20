@@ -1,0 +1,8 @@
+#!/bin/bash
+cd /var/lib/docker/workspace
+docker build -t "sprii-api" .
+
+
+docker run -d -t -p 9001:9001 --log-opt max-size=10m --log-opt max-file=10 --restart=always --name sprii-api sprii-api
+sleep 5
+

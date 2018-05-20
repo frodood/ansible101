@@ -1,0 +1,18 @@
+---
+- hosts: all
+  sudo: yes
+  remote_user: ubuntu
+  gather_facts: no
+  vars:
+    file_path: "/var/lib/awx/projects/_16__docker" 
+
+  tasks:
+    - name : build docker
+      become: yes
+      become_user: root
+      command: cd  "{{ file_path }}"
+      command : docker build -t "test-api" .
+    - name: run docker
+      become: yes
+      become_user: root
+      command : docker run -it -p 80:9001 --name api test-api

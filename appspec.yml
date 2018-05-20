@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/lib/docker/workspace
+hooks:
+  BeforeInstall:
+    - location: scripts/install_agent
+  AfterInstall:
+    - location: scripts/afterinstall
+  ApplicationStop:
+    - location: scripts/applicationstop
+  ApplicationStart:
+    - location: scripts/applicationstart 
+  ValidateService:
+    - location: scripts/ValidateService

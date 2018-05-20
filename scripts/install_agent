@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get install -y ruby wget curl
+cd /home/ubuntu
+wget https://aws-codedeploy-us-east-2.s3.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+
+curl -sSL https://get.docker.com/gpg | sudo apt-key add -
+curl -sSL https://get.docker.com/ | sh
+
+if [ ! -d /var/lib/docker/workspace ]; then
+  mkdir -p /var/lib/docker/workspace;
+fi

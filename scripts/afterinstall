@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /home/workspace
+if [ "$DEPLOYMENT_GROUP_NAME" == "staging" ]; then
+    
+        
+elif [ "$DEPLOYMENT_GROUP_NAME" == "production" ]; then
+    
+fi

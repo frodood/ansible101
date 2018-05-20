@@ -1,0 +1,11 @@
+#!/bin/bash
+
+isExistApi=$(docker ps -a | grep sprii-api)
+
+
+if [ "$isExistApi" ]
+then
+    docker rm -f sprii-api
+    docker rmi sprii-api
+fi
+

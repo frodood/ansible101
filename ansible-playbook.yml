@@ -1,0 +1,17 @@
+---
+- hosts: all
+  sudo: yes
+  remote_user: ubuntu
+  gather_facts: no
+  pre_tasks:
+    - name: 'install python2'
+      raw: sudo apt-get -y install python-simplejson
+  tasks:
+    - name: Installs docker
+      apt: pkg=docker.io state=installed update_cache=true
+      notify:
+        - start docker
+   
+  handlers:
+    - name: start docker
+      service: name=docker state=started
