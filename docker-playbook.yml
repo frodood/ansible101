@@ -8,10 +8,10 @@
 
   tasks:
     - git:
-      repo: https://github.com/frodood/ansible101.git
-      dest: /home/ubuntu/ansible101
-      version: master
-      
+        repo: https://github.com/frodood/ansible101.git
+        dest: /home/ubuntu/ansible101
+        version: master
+
     - name : build docker
       become: yes
       become_user: root
