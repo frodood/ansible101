@@ -11,8 +11,8 @@
       become: yes
       become_user: root
       shell: |
-      cd  "{{ file_path }}"
-      docker build -t "test-api" .
+        cd  "{{ file_path }}"
+        docker build -t "test-api" .
       
     - name: run docker
       become: yes
