@@ -22,4 +22,4 @@
     - name: run docker
       become: yes
       become_user: root
-      command : docker run -it -p 80:9001 --name api test-api
+      command : docker run -it -p 80:9001 -d --name api test-api
