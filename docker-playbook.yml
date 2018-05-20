@@ -6,12 +6,12 @@
   vars:
     file_path: "/var/lib/awx/projects/_19__docker" 
 
-- git:
-    repo: https://github.com/frodood/ansible101.git
-    dest: /home/ubuntu/ansible101
-    version: master
-
   tasks:
+    - git:
+      repo: https://github.com/frodood/ansible101.git
+      dest: /home/ubuntu/ansible101
+      version: master
+      
     - name : build docker
       become: yes
       become_user: root
