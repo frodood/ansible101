@@ -4,12 +4,12 @@
   remote_user: ubuntu
   gather_facts: no
   vars:
-    file_path: "/var/lib/awx/projects/_19__docker" 
+    dest: "/home/ubuntu/ansible101" 
 
   tasks:
     - git:
         repo: https://github.com/frodood/ansible101.git
-        dest: /home/ubuntu/ansible101
+        dest: "{{ dest }}"
         version: master
 
     - name : build docker
