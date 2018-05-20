@@ -10,8 +10,8 @@
     - name : build docker
       become: yes
       become_user: root
-      command: cd  "{{ file_path }}"
-      command : docker build -t "test-api" .
+      command :  cd  "{{ file_path }}" && docker build -t "test-api" .
+      
     - name: run docker
       become: yes
       become_user: root
