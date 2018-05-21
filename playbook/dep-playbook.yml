@@ -8,6 +8,9 @@
     s3Obj: "https://s3.amazonaws.com/sprii-database-backups/magento-dump.sql"
 
   tasks:
+    - pip:
+        name: boto
+        
     - apt:
         name: mysql-client 
         state: latest
