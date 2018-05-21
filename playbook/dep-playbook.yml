@@ -10,6 +10,7 @@
   tasks:
     - pip:
         name: boto
+        name: botocore
         
     - apt:
         name: mysql-client 
@@ -17,7 +18,7 @@
         update_cache: yes
 
     - name: GET operation
-      s3:
+      aws_s3:
         bucket: sprii-database-backups
         object: "{{ s3Obj }}"
         dest:  "{{ dest }}"
