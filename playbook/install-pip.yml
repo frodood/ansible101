@@ -4,9 +4,10 @@
   
   tasks:
   - name: Install easy_install
-    sudo: yes
+    become: yes
+    become_user: root
     apt:
       name: python-pip 
-          
+
     update_cache: yes
 
