@@ -1,0 +1,13 @@
+---
+- hosts: all
+  sudo: yes
+  remote_user: ubuntu
+  gather_facts: no
+  vars:
+    dest: "/home/ubuntu/ansible101" 
+
+  tasks:
+    - apt:
+        name: mysql-client 
+        state: latest
+        update_cache: yes

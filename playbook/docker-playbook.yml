@@ -1,0 +1,25 @@
+---
+- hosts: all
+  sudo: yes
+  remote_user: ubuntu
+  gather_facts: no
+  vars:
+    dest: "/home/ubuntu/ansible101" 
+
+  tasks:
+    - git:
+        repo: https://github.com/frodood/ansible101.git
+        dest: "{{ dest }}"
+        version: master
+
+    - name : build docker
+      become: yes
+      become_user: root
+      shell: |
+        cd  "{{ dest }}"
+        docker build -t "test-api" .
+      
+    - name: run docker
+      become: yes
+      become_user: root
+      command : docker run -it -p 80:9001 -d --name api test-api
