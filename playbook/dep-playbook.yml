@@ -9,14 +9,9 @@
 
   tasks:
     - pip:
-        name: boto
+        name: boto3
         name: botocore
         
-    - apt:
-        name: mysql-client 
-        state: latest
-        update_cache: yes
-
     - name: GET operation
       aws_s3:
         bucket: sprii-database-backups
