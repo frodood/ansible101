@@ -6,7 +6,10 @@
   - name: Install easy_install
     sudo: yes
     apt:
-      name: python-pip python-setuptools build-essential mysql-client
+      name: python-pip 
+      name: python-setuptools 
+      name: build-essential 
+      name: mysql-client
       
     update_cache: yes
 
