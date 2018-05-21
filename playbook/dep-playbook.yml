@@ -21,5 +21,7 @@
       s3:
         bucket: sprii-database-backups
         object: "{{ s3Obj }}"
+        aws_secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
+        aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
         dest:  "{{ dest }}"
         mode: get
