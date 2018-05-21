@@ -4,10 +4,18 @@
   remote_user: ubuntu
   gather_facts: no
   vars:
-    dest: "/home/ubuntu/ansible101" 
+    dest: "/home/ubuntu/db-backup" 
+    s3Obj: "https://s3.amazonaws.com/sprii-database-backups/magento-dump.sql"
 
   tasks:
     - apt:
         name: mysql-client 
         state: latest
         update_cache: yes
+
+    - name: GET operation
+      s3:
+        bucket: sprii-database-backups
+        object: "{{ s3Obj }}"
+        dest:  "{{ dest }}"
+        mode: get
