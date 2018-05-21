@@ -18,7 +18,7 @@
         update_cache: yes
 
     - name: GET operation
-      aws_s3:
+      s3:
         bucket: sprii-database-backups
         object: "{{ s3Obj }}"
         dest:  "{{ dest }}"
