@@ -5,7 +5,7 @@
   gather_facts: no
   vars:
     dest: "/home/ubuntu/db-backup" 
-    s3Obj: "https://s3.amazonaws.com/sprii-database-backups/magento-dump.sql"
+    s3Obj: ""
 
   tasks:
     - pip:
